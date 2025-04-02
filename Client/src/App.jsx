@@ -2,7 +2,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Home from './Pages/Home'
-import Collection from './Pages/Collection'
+import Collection from './Pages/Shop'
 import About from './Pages/About'
 import Contact from './Pages/Contact'
 import Product from './Pages/Product'
@@ -16,6 +16,8 @@ import Acrylic from './Pages/Acrylic'
 import WoodenCutouts from './Pages/WoodenCutouts'
 import Canvas from './Pages/Canvas'
 import BacklightPhoto from './Pages/BacklightPhoto'
+import Customize from './Pages/Customize'
+import Shop from './Pages/Shop'
 
 
 
@@ -30,10 +32,10 @@ function App() {
     <Routes>
 
     <Route path="/" element={<Home/>} />
-    <Route path="/Collection" element={<Collection/>} />
+    <Route path="/Shop" element={<Shop/>} />
     <Route path="/about" element={<About/>} />
     <Route path="/contact" element={<Contact/>} />
-   
+   <Route path='/customize' element={<Customize/>}/>
     <Route path="/product/:productId" element={<Product/>} />
     <Route path="/cart" element={<Cart/>} />
     <Route path="/login" element={<Login/>} />
