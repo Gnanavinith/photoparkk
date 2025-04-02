@@ -1,0 +1,12 @@
+@import '@fontsource/poppins';
+
+
+@import "tailwindcss";
+
+a.active hr{
+    display: block;
+}
+
+body{
+    background-color:#F5F5F5;
+}
