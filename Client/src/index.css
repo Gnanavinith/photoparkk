@@ -8,6 +8,11 @@ a.active hr{
 }
 
 body{
-    background-color:#fffcf2
+    background-color:#fffcf2;
+    
 }
+html, body {
+    overflow-x: hidden;
+  }
+  
 

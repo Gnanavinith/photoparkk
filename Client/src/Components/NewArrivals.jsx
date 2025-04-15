@@ -1,3 +1,4 @@
+
 import React from "react";
 import "../Components/NewArrival.css";
 import arrival1 from "../assets/NewArrival/arrival1.jpg";
@@ -60,75 +61,105 @@ const arrivals = [
 ];
 
 const NewArrivals = () => {
+  const allImages = arrivals.flatMap(item => [
+    { img: item.left, quote: item.quote },
+    { img: item.center, quote: item.quote },
+    { img: item.right, quote: item.quote },
+  ]);
+
   return (
-    <div className="text-center sm:px-[5vw] md:px-[7vw] lg:px-[9vw] font-[Poppins] ">
-    <h1 className="font-extrabold text-4xl">New Arrivals</h1>
-    <p className="text-2xl">Acrylic Photo Cutouts</p>
-    <p className="text-lg">Buy Photo Cutouts Starts @ ₹ 398/-</p>
+    <div className="text-center sm:px-[5vw] md:px-[7vw] lg:px-[9vw] font-[Poppins]">
+      <h1 className="font-extrabold text-4xl">New Arrivals</h1>
+      <p className="text-2xl">Acrylic Photo Cutouts</p>
+      <p className="text-lg">Buy Photo Cutouts Starts @ ₹ 398/-</p>
 
-    {/* Scrollable Section */}
-    <div className="overflow-y-auto overflow-x-hidden h-[600px] xl:h-[800px] 2xl:h-[900px] 3xl:h-[1000px] border rounded-sm p-10 mt-10 custom-scrollbar">
+      {/* Desktop Layout */}
+      <div className="hidden sm:block overflow-y-auto overflow-x-hidden h-[600px] xl:h-[800px] 2xl:h-[900px] 3xl:h-[1000px] border rounded-sm p-10 mt-10 custom-scrollbar">
         <div className="grid gap-14 items-center">  
-            {arrivals.map((row, index) => (
-                <div key={index} className="grid grid-cols-3 gap-10 items-center justify-center text-center">
-                    
-                    {/* Left Image - Vertical */}
-                    <div className="relative group">
-                        <img 
-                            src={row.left} 
-                            alt="Left" 
-                            className="w-full h-[250px] lg:h-[320px] xl:h-[400px] 2xl:h-[750px] 3xl:h-[800px] object-cover rounded-lg transition-all duration-300" 
-                        />
-                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-black/40 transition-opacity duration-300 rounded-lg">
-                            <button className="bg-white text-black px-4 py-2 font-semibold rounded-lg shadow-lg hover:bg-gray-200 cursor-pointer">
-                                Buy Now
-                            </button>
-                        </div>
-                    </div>
-
-                    {/* Center Image - Horizontal with Quote */}
-                    <div className="relative">
-                        {/* Image with Hover Effect */}
-                        <div className="group relative">
-                            <img 
-                                src={row.center} 
-                                alt="Center" 
-                                className="w-full h-[180px] lg:h-[220px] xl:h-[260px] 2xl:h-[600px] object-cover rounded-lg transition-all duration-300" 
-                            />
-                            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-black/40 transition-opacity duration-300 rounded-lg">
-                                <button className="bg-white text-black px-4 py-2 font-semibold rounded-lg shadow-lg hover:bg-gray-200 cursor-pointer">
-                                    Buy Now
-                                </button>
-                            </div>
-                        </div>
-                        {/* Quote Below (Unaffected by Hover) */}
-                        <p className="mt-4 text-lg font-semibold italic text-gray-700">
-                            {row.quote}
-                        </p>
-                    </div>
-
-                    {/* Right Image - Vertical */}
-                    <div className="relative group">
-                        <img 
-                            src={row.right} 
-                            alt="Right" 
-                            className="w-full h-[250px] lg:h-[320px] xl:h-[400px] 2xl:h-[750px] 3xl:h-[800px] object-cover rounded-lg transition-all duration-300" 
-                        />
-                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-black/40 transition-opacity duration-300 rounded-lg">
-                            <button className="bg-white text-black px-4 py-2 font-semibold rounded-lg shadow-lg hover:bg-gray-200 cursor-pointer">
-                                Buy Now
-                            </button>
-                        </div>
-                    </div>
-
+          {arrivals.map((row, index) => (
+            <div key={index} className="grid grid-cols-3 gap-10 items-center justify-center text-center">
+              {/* Left Image */}
+              <div className="relative group">
+                <img 
+                  src={row.left} 
+                  alt="Left" 
+                  className="w-full h-[250px] lg:h-[320px] xl:h-[400px] 2xl:h-[750px] 3xl:h-[800px] object-cover rounded-lg transition-all duration-300" 
+                />
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-black/40 transition-opacity duration-300 rounded-lg">
+                  <button className="bg-white text-black px-4 py-2 font-semibold rounded-lg shadow-lg hover:bg-gray-200 cursor-pointer">
+                    Buy Now
+                  </button>
                 </div>
-            ))}
-        </div>
-    </div>
-</div>
+              </div>
 
-  
+              {/* Center Image + Quote */}
+              <div className="relative">
+                <div className="group relative">
+                  <img 
+                    src={row.center} 
+                    alt="Center" 
+                    className="w-full h-[180px] lg:h-[220px] xl:h-[260px] 2xl:h-[600px] object-cover rounded-lg transition-all duration-300" 
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-black/40 transition-opacity duration-300 rounded-lg">
+                    <button className="bg-white text-black px-4 py-2 font-semibold rounded-lg shadow-lg hover:bg-gray-200 cursor-pointer">
+                      Buy Now
+                    </button>
+                  </div>
+                </div>
+                <p className="mt-4 text-lg font-semibold italic text-gray-700">
+                  {row.quote}
+                </p>
+              </div>
+
+              {/* Right Image */}
+              <div className="relative group">
+                <img 
+                  src={row.right} 
+                  alt="Right" 
+                  className="w-full h-[250px] lg:h-[320px] xl:h-[400px] 2xl:h-[750px] 3xl:h-[800px] object-cover rounded-lg transition-all duration-300" 
+                />
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-black/40 transition-opacity duration-300 rounded-lg">
+                  <button className="bg-white text-black px-4 py-2 font-semibold rounded-lg shadow-lg hover:bg-gray-200 cursor-pointer">
+                    Buy Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Mobile Layout */}
+      <div className="grid grid-cols-2 sm:hidden gap-4 mt-10 h-[600px] overflow-y-auto border rounded-sm p-4 custom-scrollbar">
+        {allImages.map((item, idx) => {
+          const [loaded, setLoaded] = React.useState(false);
+          return (
+            <div key={idx} className="relative group">
+              {!loaded && (
+                <div className="w-full h-40 bg-gray-200 animate-pulse rounded-lg" />
+              )}
+              <img
+                src={item.img}
+                alt="Arrival"
+                onLoad={() => setLoaded(true)}
+                className={`w-full h-40 object-cover rounded-lg transition-all duration-300 ${
+                  loaded ? "block" : "hidden"
+                }`}
+              />
+              {loaded && (
+                <div className="absolute bottom-0 left-0 w-full">
+                  <button className="w-full bg-black/60 text-white cursor-pointer text-sm font-semibold py-2 rounded-b-lg shadow-2xl">
+                    Buy Now
+                  </button>
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </div>
   );
 };
 
 export default NewArrivals;
+
