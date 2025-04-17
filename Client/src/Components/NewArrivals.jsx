@@ -1,6 +1,6 @@
-
 import React from "react";
 import "../Components/NewArrival.css";
+
 import arrival1 from "../assets/NewArrival/arrival1.jpg";
 import arrival2 from "../assets/NewArrival/arrival2.jpg";
 import arrival3 from "../assets/NewArrival/arrival3.jpg";
@@ -9,157 +9,103 @@ import arrival5 from "../assets/NewArrival/arrival5.jpg";
 import arrival6 from "../assets/NewArrival/arrival6.jpg";
 import arrival7 from "../assets/NewArrival/arrival7.jpg";
 import arrival8 from "../assets/NewArrival/arrival8.jpg";
-import arrival9 from "../assets/NewArrival/arrival9.jpg";
-import arrival10 from "../assets/NewArrival/arrival10.jpg";
-import arrival11 from "../assets/NewArrival/arrival11.jpg";
-import arrival12 from "../assets/NewArrival/arrival12.jpg";
-import arrivalcenter1 from "../assets/NewArrival/arrivalcenter1.jpg";
-import arrivalcenter2 from "../assets/NewArrival/arrivalcenter2.jpg";
-import arrivalcenter3 from "../assets/NewArrival/arrivalcenter3.jpg";
-import arrivalcenter4 from "../assets/NewArrival/arrivalcenter4.jpg";
-import arrivalcenter5 from "../assets/NewArrival/arrivalcenter5.jpg";
-import arrivalcenter6 from "../assets/NewArrival/arrivalcenter6.jpg";
 
-const arrivals = [
+const categories = [
   {
-    left: arrival1,
-    center: arrivalcenter1,
-    right: arrival2,
-    quote: "Turn your favorite moments into timeless acrylic masterpieces!",
+    title: "Acrylic",
+    description: "Stylish and durable acrylic photo frames for modern decor.",
+    images: [
+      { src: arrival1, name: "Acrylic Frame 1", rating: 4.2, price: "₹159", originalPrice: "₹599", description: "Best for Office/School/Gym/Travel", frameType: "Acrylic Frame with Modern Design" },
+      { src: arrival2, name: "Acrylic Frame 2", rating: 4.5, price: "₹199", originalPrice: "₹799", description: "Durable and stylish", frameType: "Premium Acrylic Frame" },
+      { src: arrival3, name: "Acrylic Frame 3", rating: 4.0, price: "₹129", originalPrice: "₹499", description: "Perfect for Home Decor", frameType: "Simple Acrylic Frame" },
+      { src: arrival4, name: "Acrylic Frame 4", rating: 4.7, price: "₹179", originalPrice: "₹699", description: "Elegant and modern design", frameType: "Glossy Acrylic Frame" },
+    ],
   },
   {
-    left: arrival3,
-    center: arrivalcenter2,
-    right: arrival4,
-    quote: "Capture life’s best memories in crystal-clear acrylic cutouts!",
+    title: "Frames", // Adding Frames category
+    description: "Classic and elegant photo frames for any occasion.",
+    images: [
+      { src: arrival1, name: "Frame 1", rating: 4.2, price: "₹159", originalPrice: "₹599", description: "Best for Office/School/Gym/Travel", frameType: "Classic Frame Design" },
+      { src: arrival2, name: "Frame 2", rating: 4.5, price: "₹199", originalPrice: "₹799", description: "Durable and stylish", frameType: "Modern Frame" },
+      { src: arrival3, name: "Frame 3", rating: 4.0, price: "₹129", originalPrice: "₹499", description: "Perfect for Home Decor", frameType: "Elegant Frame" },
+      { src: arrival4, name: "Frame 4", rating: 4.7, price: "₹179", originalPrice: "₹699", description: "Elegant and modern design", frameType: "Glossy Frame" },
+    ],
   },
   {
-    left: arrival5,
-    center: arrivalcenter3,
-    right: arrival6,
-    quote: "Acrylic photo cutouts – where your pictures come to life!",
+    title: "Canvas",
+    description: "High-quality canvas prints that make a bold statement.",
+    images: [
+      { src: arrival5, name: "Canvas Frame 1", rating: 4.3, price: "₹299", originalPrice: "₹999", description: "Classic design for any room", frameType: "Sturdy Canvas Frame" },
+      { src: arrival6, name: "Canvas Frame 2", rating: 4.6, price: "₹349", originalPrice: "₹1,199", description: "High-quality canvas print", frameType: "High-Resolution Canvas Print" },
+    ],
   },
   {
-    left: arrival7,
-    center: arrivalcenter4,
-    right: arrival8,
-    quote: "Transform your photos into sleek, modern acrylic art!",
+    title: "Wooden Cutouts",
+    description: "Beautiful wooden cutouts to enhance your space.",
+    images: [
+      { src: arrival7, name: "Wooden Cutout 1", rating: 4.8, price: "₹499", originalPrice: "₹1,199", description: "Great for gifting and home decor", frameType: "Intricate Wooden Design" },
+    ],
   },
   {
-    left: arrival9,
-    center: arrivalcenter5,
-    right: arrival10,
-    quote: "Preserve your special memories with stunning acrylic cutouts!",
-  },
-  {
-    left: arrival11,
-    center: arrivalcenter6,
-    right: arrival12,
-    quote:
-      "A perfect blend of elegance and durability – acrylic photo cutouts!",
+    title: "Backlight Photo Frames",
+    description: "Illuminated frames with LED backlight for a glowing effect.",
+    images: [
+      { src: arrival8, name: "Backlight Frame 1", rating: 4.9, price: "₹799", originalPrice: "₹1,499", description: "LED backlight for a glowing effect", frameType: "Backlight LED Frame" },
+    ],
   },
 ];
 
 const NewArrivals = () => {
-  const allImages = arrivals.flatMap(item => [
-    { img: item.left, quote: item.quote },
-    { img: item.center, quote: item.quote },
-    { img: item.right, quote: item.quote },
-  ]);
-
   return (
-    <div className="text-center sm:px-[5vw] md:px-[7vw] lg:px-[9vw] font-[Poppins]">
-      <h1 className="font-extrabold text-4xl">New Arrivals</h1>
-      <p className="text-2xl">Acrylic Photo Cutouts</p>
-      <p className="text-lg">Buy Photo Cutouts Starts @ ₹ 398/-</p>
+    <div className="p-4 mx-4 sm:mx-[5vw] my-10">
+      <div className="font-[Poppins] text-center">
+        <h1 className="text-4xl font-extrabold mb-4">New Arrivals</h1>
+        <p className="text-2xl text-pink-600 font-semibold mb-1">Photo Frame Collections</p>
+        <p className="text-lg text-gray-500 mb-8">Choose from a variety of stunning styles</p>
+      </div>
 
-      {/* Desktop Layout */}
-      <div className="hidden sm:block overflow-y-auto overflow-x-hidden h-[600px] xl:h-[800px] 2xl:h-[900px] 3xl:h-[1000px] border rounded-sm p-10 mt-10 custom-scrollbar">
-        <div className="grid gap-14 items-center">  
-          {arrivals.map((row, index) => (
-            <div key={index} className="grid grid-cols-3 gap-10 items-center justify-center text-center">
-              {/* Left Image */}
-              <div className="relative group">
-                <img 
-                  src={row.left} 
-                  alt="Left" 
-                  className="w-full h-[250px] lg:h-[320px] xl:h-[400px] 2xl:h-[750px] 3xl:h-[800px] object-cover rounded-lg transition-all duration-300" 
-                />
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-black/40 transition-opacity duration-300 rounded-lg">
-                  <button className="bg-white text-black px-4 py-2 font-semibold rounded-lg shadow-lg hover:bg-gray-200 cursor-pointer">
-                    Buy Now
-                  </button>
-                </div>
-              </div>
-
-              {/* Center Image + Quote */}
-              <div className="relative">
-                <div className="group relative">
-                  <img 
-                    src={row.center} 
-                    alt="Center" 
-                    className="w-full h-[180px] lg:h-[220px] xl:h-[260px] 2xl:h-[600px] object-cover rounded-lg transition-all duration-300" 
+      {/* Main container with border and scroll */}
+      <div className="border-6 border-gray-900 shadow-lg max-h-[100vh] overflow-y-auto p-6 bg-white">
+        {categories.map((category, idx) => (
+          <div key={idx} className="mb-12 text-left">
+            <h2 className="text-2xl font-bold text-gray-800 mb-2 text-center">{category.title}</h2>
+            <p className="text-xl text-gray-600 text-center mb-6">{category.description}</p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+              {category.images.map((item, index) => (
+                <div key={index} className="p-2 ">
+                  <img
+                    src={item.src}
+                    alt={`${category.title}-${index}`}
+                    className="w-full h-60 object-cover rounded-lg hover:scale-105 transition-transform"
                   />
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-black/40 transition-opacity duration-300 rounded-lg">
-                    <button className="bg-white text-black px-4 py-2 font-semibold rounded-lg shadow-lg hover:bg-gray-200 cursor-pointer">
+                  <div className="mt-4 text-center">
+                    <h3 className="text-xl font-semibold">{item.name}</h3>
+                    <p className="text-sm text-gray-500 mt-1">{item.description}</p>
+                    <div className="flex justify-center items-center mt-2">
+                      <span className="text-yellow-500">{"★".repeat(Math.round(item.rating))}</span>
+                      <span className="text-gray-500 ml-2">{item.rating} out of 5 stars</span>
+                    </div>
+                    <p className="text-lg font-bold mt-2">{item.price}</p>
+                    <p className="text-sm text-gray-400 line-through">{item.originalPrice}</p>
+                    <p className="text-sm text-green-500">Inclusive of all taxes</p>
+
+                    {/* Frame Type Section */}
+                    <p className="text-sm text-gray-600 mt-2">{item.frameType}</p>
+
+                    {/* Buy Now Button */}
+                    <button className="mt-4 bg-blue-600 cursor-pointer text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
                       Buy Now
                     </button>
                   </div>
                 </div>
-                <p className="mt-4 text-lg font-semibold italic text-gray-700">
-                  {row.quote}
-                </p>
-              </div>
-
-              {/* Right Image */}
-              <div className="relative group">
-                <img 
-                  src={row.right} 
-                  alt="Right" 
-                  className="w-full h-[250px] lg:h-[320px] xl:h-[400px] 2xl:h-[750px] 3xl:h-[800px] object-cover rounded-lg transition-all duration-300" 
-                />
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-black/40 transition-opacity duration-300 rounded-lg">
-                  <button className="bg-white text-black px-4 py-2 font-semibold rounded-lg shadow-lg hover:bg-gray-200 cursor-pointer">
-                    Buy Now
-                  </button>
-                </div>
-              </div>
+              ))}
             </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Mobile Layout */}
-      <div className="grid grid-cols-2 sm:hidden gap-4 mt-10 h-[600px] overflow-y-auto border rounded-sm p-4 custom-scrollbar">
-        {allImages.map((item, idx) => {
-          const [loaded, setLoaded] = React.useState(false);
-          return (
-            <div key={idx} className="relative group">
-              {!loaded && (
-                <div className="w-full h-40 bg-gray-200 animate-pulse rounded-lg" />
-              )}
-              <img
-                src={item.img}
-                alt="Arrival"
-                onLoad={() => setLoaded(true)}
-                className={`w-full h-40 object-cover rounded-lg transition-all duration-300 ${
-                  loaded ? "block" : "hidden"
-                }`}
-              />
-              {loaded && (
-                <div className="absolute bottom-0 left-0 w-full">
-                  <button className="w-full bg-black/60 text-white cursor-pointer text-sm font-semibold py-2 rounded-b-lg shadow-2xl">
-                    Buy Now
-                  </button>
-                </div>
-              )}
-            </div>
-          );
-        })}
+          </div>
+        ))}
       </div>
     </div>
   );
 };
 
 export default NewArrivals;
-
+ 

@@ -22,7 +22,7 @@ const Offers = () => {
   }, []);
 
   return (
-    <div className="text-center p-5 mt-20 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] font-[Poppins]">
+    <div className="text-center p-4 mx-4 sm:mx-[5vw] my-10 font-[Poppins]">
       <h1 className="text-5xl font-extrabold mb-4 text-center">
         Stunning Acrylic & Photo Frames
         <br />
@@ -37,13 +37,13 @@ const Offers = () => {
         Limited-time discounts on handcrafted, high-quality designs!
       </p>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 mx-auto w-full border-[10px] border-red-900 shadow-inner">
+      <div className="grid grid-cols-1 sm:grid-cols-2 mx-auto w-full  border-black-900 shadow-2xl">
         {/* Top Offer Image */}
         <div className="relative group order-1">
           <img
             src={topOffers[index]}
             alt="Top Offer"
-            className="w-full h-56 sm:h-72 md:h-80 xl:h-[32rem] 2xl:h-[76rem] object-cover transition-all duration-500"
+            className="w-full h-56 sm:h-72 md:h-80 xl:h-[32rem] 2xl:h-[32rem] object-cover transition-all duration-500"
           />
           <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-black/50 transition-opacity duration-300">
             <button className="bg-white text-black px-4 py-2 font-semibold shadow-lg hover:bg-gray-200">
@@ -52,34 +52,41 @@ const Offers = () => {
           </div>
         </div>
 
-        {/* Flat 50% Offer Text */}
-        <div className="flex flex-col justify-center items-center bg-gray-100 text-xl font-bold p-6 rounded-lg shadow-lg order-2 xl:h-[32rem] 2xl:h-[76rem]">
-  <p className="flex items-center gap-2 text-lg sm:text-xl xl:text-2xl 2xl:text-3xl font-semibold text-green-700">
-    <FiTag className="text-xl sm:text-2xl xl:text-3xl 2xl:text-4xl text-red-600 drop-shadow-sm" />
-    <span className="text-red-600">Exclusive Limited Offer</span>
-  </p>
-
-  <p className="text-2xl sm:text-4xl xl:text-5xl 2xl:text-6xl text-blue-900 font-extrabold mt-2 text-center">
-    Flat 50% OFF
-  </p>
-
-  <p className="text-xs sm:text-sm xl:text-base 2xl:text-lg text-gray-600 mt-2 text-center">
-    Hurry! Offer ends soon.
-  </p>
-
-  <button className="mt-4 bg-red-600 text-white px-5 py-2 rounded-lg font-semibold shadow-md hover:bg-red-700 transition-all flex items-center gap-2 text-sm sm:text-base xl:text-lg 2xl:text-xl">
-    <FiShoppingCart className="w-4 h-4 sm:w-5 sm:h-5 xl:w-6 xl:h-6 2xl:w-7 2xl:h-7" />
-    Grab the Deal
-  </button>
+        {/* Flat 50% Offer Text with Discount Label */}
+        <div className="flex flex-col justify-center items-center bg-gray-100 text-xl font-bold p-6 rounded-lg shadow-lg order-2 xl:h-[32rem] 2xl:h-[32rem] space-y-4 relative">
+          {/* Discount Label */}
+          <div className="absolute top-6 -right-8 rotate-45 bg-red-600 text-white px-6 py-1 text-xs sm:text-sm font-bold shadow-lg rounded-tl-3xl rounded-tr-4xl hidden sm:block">
+  FLAT 50% OFF
 </div>
 
+
+
+
+          <p className="flex items-center gap-2 text-lg sm:text-xl xl:text-2xl 2xl:text-3xl font-semibold text-green-700">
+            <FiTag className="text-xl sm:text-2xl xl:text-3xl 2xl:text-4xl text-red-600 drop-shadow-sm" />
+            <span className="text-red-600">Exclusive Limited Offer</span>
+          </p>
+
+          <p className="text-2xl sm:text-4xl xl:text-5xl 2xl:text-6xl text-blue-900 font-extrabold mt-2 text-center">
+            Flat 50% OFF
+          </p>
+
+          <p className="text-xs sm:text-sm xl:text-base 2xl:text-lg text-gray-600 mt-2 text-center">
+            Hurry! Offer ends soon.
+          </p>
+
+          <button className="mt-4 bg-red-600 text-white px-5 py-2 rounded-lg font-semibold shadow-md hover:bg-red-700 transition-all flex items-center gap-2 text-sm sm:text-base xl:text-lg 2xl:text-xl">
+            <FiShoppingCart className="w-4 h-4 sm:w-5 sm:h-5 xl:w-6 xl:h-6 2xl:w-7 2xl:h-7" />
+            Grab the Deal
+          </button>
+        </div>
 
         {/* Bottom Offer Image */}
         <div className="relative group order-3 sm:order-4">
           <img
             src={downOffers[index]}
             alt="Down Offer"
-            className="w-full h-56 sm:h-72 md:h-80 xl:h-[32rem] 2xl:h-[76rem] object-cover transition-all duration-500"
+            className="w-full h-56 sm:h-72 md:h-80 xl:h-[32rem] 2xl:h-[32rem] object-cover transition-all duration-500"
           />
           <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 bg-black/50 transition-opacity duration-300">
             <button className="bg-white text-black px-4 py-2 font-semibold shadow-lg hover:bg-gray-200">
@@ -89,26 +96,25 @@ const Offers = () => {
         </div>
 
         {/* Buy 1 Get 1 Free Text */}
-        <div className="flex flex-col justify-center items-center bg-gray-100 text-xl font-bold p-6 rounded-lg shadow-lg order-4 sm:order-3 xl:h-[32rem] 2xl:h-[76rem]">
-  <p className="flex items-center gap-2 text-lg sm:text-xl xl:text-2xl 2xl:text-3xl font-semibold text-green-700">
-    <FiTag className="text-xl sm:text-2xl xl:text-3xl 2xl:text-4xl text-green-800 drop-shadow-sm" />
-    <span className="text-green-900">Unbeatable Best Deal</span>
-  </p>
+        <div className="flex flex-col justify-center items-center bg-gray-100 text-xl font-bold p-6 rounded-lg shadow-lg order-4 sm:order-3 xl:h-[32rem] 2xl:h-[32rem] space-y-4">
+          <p className="flex items-center gap-2 text-lg sm:text-xl xl:text-2xl 2xl:text-3xl font-semibold text-green-700">
+            <FiTag className="text-xl sm:text-2xl xl:text-3xl 2xl:text-4xl text-green-800 drop-shadow-sm" />
+            <span className="text-green-900">Unbeatable Best Deal</span>
+          </p>
 
-  <p className="text-2xl sm:text-4xl xl:text-5xl 2xl:text-6xl text-blue-900 font-extrabold text-center mt-2">
-    Buy 1 Get 1 Free
-  </p>
+          <p className="text-2xl sm:text-4xl xl:text-5xl 2xl:text-6xl text-blue-900 font-extrabold text-center mt-2">
+            Buy 1 Get 1 Free
+          </p>
 
-  <p className="text-xs sm:text-sm xl:text-base 2xl:text-lg text-gray-600 mt-2 text-center">
-    Double the joy for the same price!
-  </p>
+          <p className="text-xs sm:text-sm xl:text-base 2xl:text-lg text-gray-600 mt-2 text-center">
+            Double the joy for the same price!
+          </p>
 
-  <button className="mt-4 bg-green-600 text-white px-5 py-2 rounded-lg font-semibold shadow-md hover:bg-green-700 transition-all flex items-center gap-2 text-sm sm:text-base xl:text-lg 2xl:text-xl">
-    <FiShoppingCart className="w-4 h-4 sm:w-5 sm:h-5 xl:w-6 xl:h-6 2xl:w-7 2xl:h-7" />
-    Shop Now
-  </button>
-</div>
-
+          <button className="mt-4 bg-green-600 text-white px-5 py-2 rounded-lg font-semibold shadow-md hover:bg-green-700 transition-all flex items-center gap-2 text-sm sm:text-base xl:text-lg 2xl:text-xl">
+            <FiShoppingCart className="w-4 h-4 sm:w-5 sm:h-5 xl:w-6 xl:h-6 2xl:w-7 2xl:h-7" />
+            Shop Now
+          </button>
+        </div>
       </div>
     </div>
   );

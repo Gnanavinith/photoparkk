@@ -44,7 +44,8 @@ function Customize() {
   }, [activeIndex, isManual]);
 
   return (
-    <div className="mt-20 flex flex-col items-center justify-center mx-4 sm:mx-8 md:mx-12 lg:mx-[9vw] p-8">
+    <div className="mt-20 flex flex-col items-center justify-center p-4 mx-[7vw] sm:mx-[7vw]">
+
       <h1 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-800 text-center font-[poppins]">
         Customize Your Frame
       </h1>
@@ -67,8 +68,7 @@ function Customize() {
           <div className="relative 
             h-[340px] w-[240px] 
             sm:h-[440px] sm:w-[340px] 
-            xl:h-[540px] xl:w-[390px] 
-            2xl:h-[940px] 2xl:w-[840px]">
+            lg:h-[540px] lg:w-[390px]">
             {borderColors.map((color, index) => {
               const position = (index - activeIndex + totalFrames) % totalFrames;
 
